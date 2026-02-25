@@ -39,6 +39,8 @@ const topSellingBikes: Motorcycle[] = [
 
 const sportBikes = vehicles.filter(v => v.type === 'Bike').slice(0, 3);
 
+export { sportBikes };
+
 export default function HomePage() {
   const [brand, setBrand] = useState('');
   const [type, setType] = useState('');

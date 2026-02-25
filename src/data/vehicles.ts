@@ -1,40 +1,7 @@
 import { Motorcycle } from '../types';
 
 export const vehicles: Motorcycle[] = [
-  // Hero Bikes
-  {
-    name: 'Hero Splendor Plus',
-    price: '75000',
-    engine: '97.2cc',
-    power: '8 bhp',
-    weight: '112 kg',
-    imageUrl: 'https://res.cloudinary.com/dqodbpoek/image/upload/v1772039364/hero-splendor-plus-why-generations-of-love_fqykdc.avif',
-    spec: '97.2cc / 8 bhp',
-    brand: 'HERO',
-    type: 'Bike',
-  },
-  {
-    name: 'Hero HF Deluxe',
-    price: '65000',
-    engine: '97.2cc',
-    power: '8 bhp',
-    weight: '112 kg',
-    imageUrl: 'https://imgd.aeplcdn.com/1280x720/n/cw/ec/140813/hf-deluxe-right-front-three-quarter.jpeg?isig=0',
-    spec: '97.2cc / 8 bhp',
-    brand: 'HERO',
-    type: 'Bike',
-  },
-  {
-    name: 'Hero XPulse 200',
-    price: '150000',
-    engine: '199.6cc',
-    power: '18.9 bhp',
-    weight: '158 kg',
-    imageUrl: 'https://imgd.aeplcdn.com/1280x720/n/cw/ec/105184/xpulse-200-4v-right-front-three-quarter.jpeg?isig=0',
-    spec: '199.6cc / 18.9 bhp',
-    brand: 'HERO',
-    type: 'Bike',
-  },
+
   // Hero Scooters
   {
     name: 'Hero Vida V1',
