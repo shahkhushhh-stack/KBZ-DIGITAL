@@ -48,7 +48,9 @@ export default function Header() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20 border-b border-white/10">
           <div className="flex items-center space-x-8">
-            <h1 className="text-2xl font-bold text-white tracking-wider">KBZ <span className="text-brand-red">DIGITAL</span></h1>
+            <NavLink to="/">
+              <h1 className="text-2xl font-bold text-white tracking-wider">KBZ <span className="text-brand-red">DIGITAL</span></h1>
+            </NavLink>
             <nav className="hidden md:flex items-center space-x-6">
               <SuperbikeDropdown />
               <NavLink to="/compare" className={navLinkClasses}>Compare</NavLink>

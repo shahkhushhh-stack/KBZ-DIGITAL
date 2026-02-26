@@ -9,4 +9,6 @@ export interface Motorcycle {
   power?: string;
   weight?: string;
   tags?: string[];
+  description?: string;
+  keyFeatures?: string[];
 }

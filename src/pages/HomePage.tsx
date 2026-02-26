@@ -1,5 +1,6 @@
 import { ChevronDown, ArrowRight, ShieldCheck, Calendar, Wallet } from 'lucide-react';
 import MotorcycleCard from '../components/MotorcycleCard';
+import VehicleDetailModal from '../components/VehicleDetailModal';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Motorcycle } from '../types';
@@ -45,6 +46,7 @@ export default function HomePage() {
   const [brand, setBrand] = useState('');
   const [type, setType] = useState('');
   const navigate = useNavigate();
+  const [selectedVehicle, setSelectedVehicle] = useState<Motorcycle | null>(null);
 
   const handleExplore = () => {
     const params = new URLSearchParams();
@@ -69,8 +71,8 @@ export default function HomePage() {
         <div className="relative z-10 container mx-auto px-4 flex justify-start">
           <div className="max-w-2xl text-left">
             <p className="text-brand-red font-semibold text-sm tracking-widest">PREMIUM FLEET 2024</p>
-            <h1 className="text-7xl md:text-8xl font-extrabold text-white leading-tight mt-2 font-display tracking-wider">
-              FIND YOUR <br /> PERFECT <span className="text-brand-red">RIDE</span>
+            <h1 className="text-7xl md:text-8xl font-extrabold text-white leading-tight mt-2 font-display tracking-wider" style={{ textShadow: '0 0 15px rgba(239, 68, 68, 0.5), 0 0 30px rgba(239, 68, 68, 0.3)' }}>
+              FIND YOUR PERFECT<br /> <span className="text-brand-red">RIDE</span>
             </h1>
             <p className="mt-4 text-gray-300 max-w-lg">
               Experience precision engineering and raw power. From urban agility to open-road dominance, discover the motorcycle that defines you.
@@ -91,16 +93,22 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-      <PerformanceSection />
+      <PerformanceSection onOpenModal={setSelectedVehicle} />
       <FeatureBanner />
-      <TopSellingSection />
+      <TopSellingSection onOpenModal={setSelectedVehicle} />
       <BrandsSection />
       <WhyUsSection />
+      {selectedVehicle && (
+        <VehicleDetailModal 
+          vehicle={selectedVehicle} 
+          onClose={() => setSelectedVehicle(null)} 
+        />
+      )}
     </>
   );
 }
 
-function PerformanceSection() {
+function PerformanceSection({ onOpenModal }: { onOpenModal: (vehicle: Motorcycle) => void }) {
   return (
     <div className="bg-dark-bg py-20">
       <div className="container mx-auto px-4">
@@ -113,7 +121,7 @@ function PerformanceSection() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {sportBikes.map(bike => (
-            <MotorcycleCard key={bike.name} motorcycle={bike} />
+            <MotorcycleCard key={bike.name} motorcycle={bike} onOpenModal={onOpenModal} />
           ))}
         </div>
       </div>
@@ -153,7 +161,7 @@ interface FeatureItemProps {
     description: string;
 }
 
-function TopSellingSection() {
+function TopSellingSection({ onOpenModal }: { onOpenModal: (vehicle: Motorcycle) => void }) {
   return (
     <div className="bg-dark-bg py-20">
       <div className="container mx-auto px-4">
@@ -163,7 +171,7 @@ function TopSellingSection() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {topSellingBikes.map(bike => (
-            <MotorcycleCard key={bike.name} motorcycle={bike} />
+            <MotorcycleCard key={bike.name} motorcycle={bike} onOpenModal={onOpenModal} />
           ))}
         </div>
       </div>

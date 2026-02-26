@@ -4,9 +4,10 @@ import { formatCurrency } from '../utils';
 
 interface MotorcycleCardProps {
   motorcycle: Motorcycle;
+  onOpenModal: (motorcycle: Motorcycle) => void;
 }
 
-export default function MotorcycleCard({ motorcycle }: MotorcycleCardProps) {
+export default function MotorcycleCard({ motorcycle, onOpenModal }: MotorcycleCardProps) {
   return (
     <div className="bg-card-bg border border-border-color rounded-lg overflow-hidden group">
       <div className="relative p-4 bg-black">
@@ -20,7 +21,7 @@ export default function MotorcycleCard({ motorcycle }: MotorcycleCardProps) {
         <p className="text-sm text-gray-400 mt-1">{motorcycle.spec}</p>
         <div className="flex items-center justify-between mt-4">
           <p className="text-xl font-bold text-white">{formatCurrency(motorcycle.price)}</p>
-          <button className="w-10 h-10 rounded-full bg-gray-700 hover:bg-brand-red flex items-center justify-center transition-colors">
+          <button onClick={() => onOpenModal(motorcycle)} className="w-10 h-10 rounded-full bg-gray-700 hover:bg-brand-red flex items-center justify-center transition-colors">
             <Plus className="w-5 h-5 text-white" />
           </button>
         </div>
