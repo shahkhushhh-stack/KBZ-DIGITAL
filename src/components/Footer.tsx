@@ -45,6 +45,28 @@ const SocialIcon = ({ icon }: { icon: React.ReactNode }) => (
   </a>
 );
 
+function InsurancePartnersDropdown() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <li className="relative">
+      <button 
+        onClick={() => setIsOpen(!isOpen)}
+        className="text-gray-400 text-sm hover:text-white transition-colors flex items-center w-full justify-between"
+      >
+        <span>Insurance Partners</span>
+        <ChevronDown className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+      </button>
+      {isOpen && (
+        <ul className="mt-2 pl-4 space-y-2 border-l border-white/10">
+          <li><a href="#" className="text-gray-400 text-sm hover:text-white transition-colors">ICICI LOMBARD</a></li>
+          <li><a href="#" className="text-gray-400 text-sm hover:text-white transition-colors">TATA INSURANCE</a></li>
+        </ul>
+      )}
+    </li>
+  );
+}
+
 function FinancePartnersDropdown() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -75,8 +97,14 @@ const FooterLinks = ({ title, links }: { title: string, links: string[] }) => (
         if (link === 'Finance Partners') {
           return <FinancePartnersDropdown key={link} />;
         }
+        if (link === 'Insurance Partners') {
+          return <InsurancePartnersDropdown key={link} />;
+        }
         if (link === 'Loan Calculator') {
-          return <li key={link}><a href="/finance" className="text-gray-400 text-sm hover:text-white transition-colors">{link}</a></li>;
+          return <li key={link}><a href="/emi-calculator" className="text-gray-400 text-sm hover:text-white transition-colors">{link}</a></li>;
+        }
+        if (link === 'Contact Us') {
+          return <li key={link}><a href="mailto:kbzrto@gmail.com" className="text-gray-400 text-sm hover:text-white transition-colors">kbzrto@gmail.com</a></li>;
         }
         return (
           <li key={link}><a href="#" className="text-gray-400 text-sm hover:text-white transition-colors">{link}</a></li>

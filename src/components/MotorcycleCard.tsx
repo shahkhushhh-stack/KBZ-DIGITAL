@@ -1,5 +1,6 @@
 import { Plus } from 'lucide-react';
 import { Motorcycle } from '../types';
+import { formatCurrency } from '../utils';
 
 interface MotorcycleCardProps {
   motorcycle: Motorcycle;
@@ -18,7 +19,7 @@ export default function MotorcycleCard({ motorcycle }: MotorcycleCardProps) {
         <h3 className="text-lg font-bold text-white">{motorcycle.name}</h3>
         <p className="text-sm text-gray-400 mt-1">{motorcycle.spec}</p>
         <div className="flex items-center justify-between mt-4">
-          <p className="text-xl font-bold text-white">${motorcycle.price.toLocaleString()}</p>
+          <p className="text-xl font-bold text-white">{formatCurrency(motorcycle.price)}</p>
           <button className="w-10 h-10 rounded-full bg-gray-700 hover:bg-brand-red flex items-center justify-center transition-colors">
             <Plus className="w-5 h-5 text-white" />
           </button>
