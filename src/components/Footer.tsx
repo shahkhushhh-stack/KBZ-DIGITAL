@@ -15,7 +15,6 @@ export default function Footer() {
               <SocialIcon icon={<Dribbble className="w-4 h-4" />} />
             </div>
           </div>
-          <FooterLinks title="QUICK LINKS" links={['All Gear', 'Electric Bikes', 'Loan Calculator', 'Spare Parts']} />
           <FooterLinks title="SUPPORT" links={['Contact Us', 'Finance FAQ', 'Insurance Partners', 'Roadside Assistance', 'Finance Partners']} />
           <div>
             <h3 className="font-bold text-sm tracking-widest text-white uppercase">SHOWROOM UPDATES</h3>

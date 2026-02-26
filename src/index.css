@@ -4,5 +4,6 @@
 
 body {
   @apply bg-[#111111] text-white font-sans;
+  cursor: url('/bike-cursor.svg'), auto;
 }
 

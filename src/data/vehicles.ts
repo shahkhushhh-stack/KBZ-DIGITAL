@@ -59,4 +59,15 @@ export const vehicles: Motorcycle[] = [
     brand: 'ROYAL ENFIELD',
     type: 'Bike',
   },
+  {
+    name: 'Royal Enfield Interceptor 650',
+    price: '499999',
+    engine: '648cc',
+    power: '47 bhp',
+    weight: '202 kg',
+    imageUrl: 'https://ic4.maxabout.us/autos/tw_india//R/2022/9/re-int-650-downtown-drag.jpg',
+    spec: '648cc / 47 bhp',
+    brand: 'ROYAL ENFIELD',
+    type: 'Bike',
+  },
 ];

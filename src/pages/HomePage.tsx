@@ -95,7 +95,7 @@ export default function HomePage() {
       <FeatureBanner />
       <TopSellingSection />
       <BrandsSection />
-      <StyleAndComfortSection />
+      <WhyUsSection />
     </>
   );
 }
@@ -194,32 +194,30 @@ function BrandsSection() {
   );
 }
 
-function StyleAndComfortSection() {
+function WhyUsSection() {
   return (
     <div className="bg-dark-bg py-20 text-white">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="order-2 lg:order-1">
-            <h2 className="text-4xl font-bold font-display tracking-wider">STYLE & <span className="text-brand-red">COMFORT</span></h2>
-            <p className="text-gray-400 mt-2 max-w-md">Navigate the urban landscape with effortless grace. Our collection of scooters combines sleek design with rider-centric comfort for efficient and enjoyable city commuting.</p>
-            <ul className="mt-6 space-y-3 text-gray-300">
-              <li className="flex items-center"><CheckIcon /> Ergonomic seating for long urban commutes</li>
-              <li className="flex items-center"><CheckIcon /> Advanced fuel-injection technology</li>
-              <li className="flex items-center"><CheckIcon /> Bluetooth connectivity for navigation & calls</li>
-            </ul>
-            <button className="mt-8 bg-transparent border border-white text-white font-bold py-3 px-8 rounded-lg hover:bg-white hover:text-black transition-colors">
-              VIEW SCOOTERS RANGE
-            </button>
-          </div>
-          <div className="grid grid-cols-2 gap-4 order-1 lg:order-2">
-            <a href="https://www.heromotocorp.com/en-in/motorcycles/practical/splendor-plus.html" target="_blank" rel="noopener noreferrer">
-              <img src="https://res.cloudinary.com/dqodbpoek/image/upload/v1772039364/hero-splendor-plus-why-generations-of-love_fqykdc.avif" alt="Hero Splendor Plus" className="rounded-lg w-full h-full object-cover" referrerPolicy="no-referrer" />
-            </a>
-            <a href="https://www.honda2wheelersindia.com/scooter/activa125" target="_blank" rel="noopener noreferrer">
-              <img src="https://res.cloudinary.com/dqodbpoek/image/upload/v1772039248/activa-6g-right-side-view-3_iobulz.avif" alt="Honda Activa" className="rounded-lg w-full h-full object-cover" referrerPolicy="no-referrer" />
-            </a>
-            
-          </div>
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold font-display tracking-wider">WHY CHOOSE <span className="text-brand-red">US?</span></h2>
+          <p className="text-gray-400 mt-2 max-w-2xl mx-auto">We are more than just a dealership. We are a community of riders dedicated to providing the best experience for our customers.</p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <FeatureItem 
+            icon={<ShieldCheck className="w-8 h-8 mx-auto mb-3" />} 
+            title="QUALITY ASSURANCE"
+            description="Every bike is inspected and certified by our experts."
+          />
+          <FeatureItem 
+            icon={<Wallet className="w-8 h-8 mx-auto mb-3" />} 
+            title="FLEXIBLE FINANCING"
+            description="We offer a variety of financing options to fit your budget."
+          />
+          <FeatureItem 
+            icon={<Calendar className="w-8 h-8 mx-auto mb-3" />} 
+            title="EXPERT SERVICE"
+            description="Our certified technicians will keep your bike in top condition."
+          />
         </div>
       </div>
     </div>
