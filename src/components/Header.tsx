@@ -3,10 +3,10 @@ import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 
 const superbikeBrands = [
-  { name: 'KTM', imageUrl: 'https://motorcycle-logos.com/wp-content/uploads/2016/10/KTM-logo.png' },
-  { name: 'DUCATI', imageUrl: 'https://cdn-0.motorcycle-logos.com/wp-content/uploads/2016/10/Ducati-Logo-Description.png' },
-  { name: 'APRILIA', imageUrl: 'https://wlassets.aprilia.com/wlassets/aprilia/master/Aprilia_World/Racing/sport_production/editorial/Aprilia_Racing_Sport_Production/original/Aprilia_Racing_Sport_Production.png?1594819922759' },
-  { name: 'BMW', imageUrl: 'https://static.vecteezy.com/system/resources/previews/020/502/870/original/bmw-brand-logo-car-symbol-blue-and-white-design-germany-automobile-illustration-with-black-background-free-vector.jpg' }
+  { name: 'KTM', imageUrl: 'https://motorcycle-logos.com/wp-content/uploads/2016/10/KTM-logo.png', websiteUrl: 'https://www.ktmindia.com/' },
+  { name: 'DUCATI', imageUrl: 'https://cdn-0.motorcycle-logos.com/wp-content/uploads/2016/10/Ducati-Logo-Description.png', websiteUrl: 'https://www.ducati.com/in/en/home' },
+  { name: 'APRILIA', imageUrl: 'https://wlassets.aprilia.com/wlassets/aprilia/master/Aprilia_World/Racing/sport_production/editorial/Aprilia_Racing_Sport_Production/original/Aprilia_Racing_Sport_Production.png?1594819922759', websiteUrl: 'https://apriliaindia.com/' },
+  { name: 'BMW', imageUrl: 'https://static.vecteezy.com/system/resources/previews/020/502/870/original/bmw-brand-logo-car-symbol-blue-and-white-design-germany-automobile-illustration-with-black-background-free-vector.jpg', websiteUrl: 'https://www.bmw-motorrad.in/en/models/modeloverview.html' }
 ];
 
 function SuperbikeDropdown() {
@@ -26,7 +26,7 @@ function SuperbikeDropdown() {
           <ul>
             {superbikeBrands.map(brand => (
               <li key={brand.name}>
-                <a href="#" className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-white/5">
+                <a href={brand.websiteUrl} target="_blank" rel="noopener noreferrer" className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-white/5">
                   <img src={brand.imageUrl} alt={brand.name} className="w-8 h-8 object-contain mr-3" referrerPolicy="no-referrer" />
                   <span>{brand.name}</span>
                 </a>
@@ -62,7 +62,6 @@ export default function Header() {
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
               <input type="text" placeholder="Search brands or models" className="bg-white/5 border border-white/10 rounded-full py-2 pl-9 pr-4 text-sm w-64 focus:outline-none focus:ring-1 focus:ring-brand-red" />
             </div>
-            <NavLink to="/signup" className="bg-brand-red text-white font-bold text-sm px-6 py-2.5 rounded-full hover:bg-red-700 transition-colors">Sign Up</NavLink>
           </div>
         </div>
       </div>
